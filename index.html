@@ -6,7 +6,7 @@
     <title>Tounnax - Free Fire Tournament App</title>
     <script src="https://kit.fontawesome.com/8aa17a250d.js" crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
         * { padding: 0; margin: 0; overflow-x: hidden; }
         body { font-family: "Poppins", serif; background: linear-gradient(135deg, #1E1E2C, #333333); color: #FFFFFF; transition: background-color 0.5s, color 0.5s; animation: fadeIn 1s ease-in-out; }
         header, .section { padding: 10px; }
@@ -16,24 +16,23 @@
         header nav { display: none; }
         header .menu-icon { display: block; cursor: pointer; }
         header .menu-icon .bar { display: block; width: 25px; height: 3px; background-color: #fff; margin: 5px 0; }
-        .menu-page { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 1001; flex-direction: column; align-items: center; justify-content: center; }
+        .menu-page { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 1001; align-items: center; justify-content: center; }
         .menu-page.active { display: flex; }
-        .menu-page ul { list-style: none; padding: 0; }
-        .menu-page ul li { margin: 20px 0; }
-        .menu-page ul li a { color: #FFFFFF; text-decoration: none; font-size: 24px; padding: 10px 20px; border-radius: 5px; background-color: #333333; box-shadow: 0 0 10px white; }
+        .menu-box { width: 80%; max-width: 600px; background-color: #333333; border-radius: 10px; box-shadow: 0 0 10px white; padding: 20px; position: relative; }
+        .menu-box .close-btn { position: absolute; top: 10px; right: 10px; color: red; font-size: 24px; cursor: pointer; }
+        .menu-box ul { list-style: none; padding: 0; text-align: center; }
+        .menu-box ul li { margin: 20px 0; }
+        .menu-box ul li a { color: #FFFFFF; text-decoration: none; font-size: 24px; padding: 10px 20px; display: inline-block; border-radius: 5px; background-color: #333333; box-shadow: 0 0 10px white; }
         .hero { text-align: center; background: url('banner.jpg') no-repeat center center/contain; color: #FFFFFF; height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 20px; animation: fadeIn 1s ease-in-out; }
         .hero a { margin: 10px; padding: 10px 20px; text-decoration: none; font-size: 18px; color: #fff; border: 1px solid; border-radius: 20px; background-color: #18BC9C; box-shadow: 0 0 10px #18BC9C; animation: pulse 2s infinite; }
         .about, .features, .screenshots, .testimonials, .download, .contact, .statistics { margin: 20px 0; }
-        .about h2, .features h2, .screenshots h2, .testimonials h2, .download h2, .contact h2, .statistics h2 { text-align: center; font-size: 30px; font-weight: bold; margin-bottom: 20px; animation: fadeIn 1s ease-in-out; }
-        .about p, .features p, .screenshots p, .testimonials p, .download p, .contact p, .statistics p { text-align: center; font-size: 16px; margin: 10px 0; animation: fadeIn 1s ease-in-out; }
-        .features .feature { display: flex; align-items: center; margin: 20px 0; animation: fadeIn 1s ease-in-out; }
-        .features .feature img { width: 100px; height: 100px; margin-right: 20px; filter: drop-shadow(0 0 20px #18BC9C); }
-        .features .feature h3 { font-size: 24px; font-weight: bold; }
-        .features .feature p { font-size: 16px; }
-        .screenshots img { width: 100%; max-width: 300px; border-radius: 15px; margin: 0 auto; display: block; filter: drop-shadow(0 0 20px #18BC9C); }
-        .testimonials .testimonial { display: flex; align-items: center; margin: 20px 0; animation: fadeIn 1s ease-in-out; }
-        .testimonials .testimonial img { width: 100px; height: 100px; margin-right: 20px; filter: drop-shadow(0 0 20px #18BC9C); }
-        .testimonials .testimonial p { font-size: 16px; }
+        .about h2, .features h2, .screenshots h2, .testimonials h2, .download h2, .contact h2, .statistics h2 { text-align: center; font-size: 30px; font-weight: bold; margin-bottom: 20px; animation: fadeIn 1s ease-in-out; text-shadow: 0 0 8px rgba(255, 140, 0, 0.8), 0 0 16px rgba(255, 140, 0, 0.6), 0 0 24px rgba(255, 69, 0, 0.4); }
+        .about p, .features p, .screenshots p, .testimonials p, .download p, .contact p, .statistics p { text-align: center; font-size: 16px; margin: 10px 0; animation: fadeIn 1s ease-in-out; text-shadow: 0 0 8px rgba(255, 140, 0, 0.8), 0 0 16px rgba(255, 140, 0, 0.6), 0 0 24px rgba(255, 69, 0, 0.4); }
+        .features .feature, .testimonials .testimonial { text-align: center; margin: 20px 0; animation: fadeIn 1s ease-in-out; }
+        .features .feature img, .testimonials .testimonial img { width: 100px; height: 100px; margin: 0 auto 10px; display: block; filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 69, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 69, 0, 0.4)); }
+        .features .feature h3, .testimonials .testimonial h3 { font-size: 24px; font-weight: bold; }
+        .features .feature p, .testimonials .testimonial p { font-size: 16px; }
+        .screenshots img { width: 100%; max-width: 300px; border-radius: 15px; margin: 0 auto; display: block; filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 69, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 69, 0, 0.4)); }
         .download a { color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; flex-direction: row; border: 1px solid; padding: 10px; border-radius: 25px; background-color: #18BC9C; width: 80%; margin: 10px auto; box-shadow: 0 0 10px #18BC9C; animation: pulse 2s infinite; }
         .contact form { display: flex; flex-direction: column; align-items: center; }
         .contact form input, .contact form textarea { width: 80%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
@@ -81,13 +80,16 @@
     </header>
 
     <div class="menu-page" id="menuPage">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#download">Download</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="menu-box">
+            <div class="close-btn" onclick="toggleMenu()">×</div>
+            <ul>
+                <li><a href="#home" onclick="navigateToSection('#home')">Home</a></li>
+                <li><a href="#features" onclick="navigateToSection('#features')">Features</a></li>
+                <li><a href="#about" onclick="navigateToSection('#about')">About</a></li>
+                <li><a href="https://ga-fs.primexop.com/2213/androidBuilds/tounnaxV1.apk" target="_blank">Download</a></li>
+                <li><a href="#contact" onclick="navigateToSection('#contact')">Contact</a></li>
+            </ul>
+        </div>
     </div>
 
     <section id="home" class="hero">
@@ -103,45 +105,33 @@
         <h2>Key Features</h2>
         <div class="feature">
             <img src="rupees.png" alt="Free Contests">
-            <div>
-                <h3>Free Contests</h3>
-                <p>You can join any contest of your liking and of your desired time for free as a launch offer.</p>
-            </div>
+            <h3>Free Contests</h3>
+            <p>You can join any contest of your liking and of your desired time for free as a launch offer.</p>
         </div>
         <div class="feature">
             <img src="chart.png" alt="Leader Boards">
-            <div>
-                <h3>Leader Boards</h3>
-                <p>There will be leader boards of all the pro players to see who got the guts and skills at the same time.</p>
-            </div>
+            <h3>Leader Boards</h3>
+            <p>There will be leader boards of all the pro players to see who got the guts and skills at the same time.</p>
         </div>
         <div class="feature">
             <img src="giftbox.png" alt="Cash Prizes">
-            <div>
-                <h3>Cash Prizes</h3>
-                <p>As a true core gamer you will be competing some of the best players of India and also can win exciting cash prizes.</p>
-            </div>
+            <h3>Cash Prizes</h3>
+            <p>As a true core gamer you will be competing some of the best players of India and also can win exciting cash prizes.</p>
         </div>
         <div class="feature">
             <img src="play.png" alt="Fair Play">
-            <div>
-                <h3>Fair Play</h3>
-                <p>With the respect of gaming community, we have made some rules for the players. No Emulators, No Hackers.</p>
-            </div>
+            <h3>Fair Play</h3>
+            <p>With the respect of gaming community, we have made some rules for the players. No Emulators, No Hackers.</p>
         </div>
         <div class="feature">
             <img src="mans.png" alt="Share & Earn">
-            <div>
-                <h3>Share & Earn</h3>
-                <p>You can refer other gamers to play on the platform. You will get a refer bonus for it.</p>
-            </div>
+            <h3>Share & Earn</h3>
+            <p>You can refer other gamers to play on the platform. You will get a refer bonus for it.</p>
         </div>
         <div class="feature">
             <img src="share.png" alt="More Features">
-            <div>
-                <h3>More Features</h3>
-                <p>Introducing more exciting features to enhance your gaming experience. Stay tuned!</p>
-            </div>
+            <h3>More Features</h3>
+            <p>Introducing more exciting features to enhance your gaming experience. Stay tuned!</p>
         </div>
     </section>
 
@@ -155,10 +145,12 @@
         <h2>What Our Users Say</h2>
         <div class="testimonial">
             <img src="pic.png" alt="User 1">
+            <h3>User 1</h3>
             <p>"Tounnax is the best tournament app I've ever used! The competitions are fierce and the prizes are amazing."</p>
         </div>
         <div class="testimonial">
             <img src="pic.png" alt="User 2">
+            <h3>User 2</h3>
             <p>"I love how easy it is to join contests and track my progress on the leaderboards. Highly recommend Tounnax to all Free Fire players!"</p>
         </div>
     </section>
@@ -188,15 +180,15 @@
         <h2>Live Statistics</h2>
         <div class="stat">
             <h3>Downloads</h3>
-            <p id="downloads">0</p>
+            <p id="downloads">20000</p>
         </div>
         <div class="stat">
             <h3>Live Users</h3>
-            <p id="liveUsers">0</p>
+            <p id="liveUsers">800</p>
         </div>
         <div class="stat">
             <h3>Total Wins Today</h3>
-            <p id="winsToday">0</p>
+            <p id="winsToday">10000</p>
         </div>
     </section>
 
@@ -247,23 +239,4 @@
         // Fake statistics increment
         function incrementStatistics() {
             const downloadsElement = document.getElementById('downloads');
-            const liveUsersElement = document.getElementById('liveUsers');
-            const winsTodayElement = document.getElementById('winsToday');
-
-            let downloads = parseInt(downloadsElement.textContent);
-            let liveUsers = parseInt(liveUsersElement.textContent);
-            let winsToday = parseInt(winsTodayElement.textContent);
-
-            downloads += Math.floor(Math.random() * 10) + 1;
-            liveUsers += Math.floor(Math.random() * 5) + 1;
-            winsToday += Math.floor(Math.random() * 3) + 1;
-
-            downloadsElement.textContent = downloads;
-            liveUsersElement.textContent = liveUsers;
-            winsTodayElement.textContent = winsToday;
-        }
-
-        setInterval(incrementStatistics, 5000);
-    </script>
-</body>
-</html>
+            const liveUsersElement
