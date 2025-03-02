@@ -23,7 +23,7 @@
         .menu-box ul { list-style: none; padding: 0; text-align: center; }
         .menu-box ul li { margin: 20px 0; }
         .menu-box ul li a { color: #FFFFFF; text-decoration: none; font-size: 24px; padding: 10px 20px; display: inline-block; border-radius: 5px; background-color: #333333; box-shadow: 0 0 10px white; }
-        .hero { text-align: center; background: url('banner.jpg') no-repeat center center/cover; color: #FFFFFF; height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 20px; animation: fadeIn 1s ease-in-out; }
+        .hero { text-align: center; background: url('banner.jpg') no-repeat center center/contain; color: #FFFFFF; height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 20px; animation: fadeIn 1s ease-in-out; }
         .hero a { margin: 10px; padding: 10px 20px; text-decoration: none; font-size: 18px; color: #fff; border: 1px solid; border-radius: 20px; background-color: #18BC9C; box-shadow: 0 0 10px #18BC9C; animation: pulse 2s infinite; }
         .about, .features, .screenshots, .testimonials, .download, .contact, .statistics { margin: 20px 0; }
         .about h2, .features h2, .screenshots h2, .testimonials h2, .download h2, .contact h2, .statistics h2 { text-align: center; font-size: 30px; font-weight: bold; margin-bottom: 20px; animation: fadeIn 1s ease-in-out; }
@@ -61,50 +61,9 @@
             header nav ul { flex-direction: column; }
             header nav ul li { margin: 10px 0; }
         }
-        /* Digital elements and animations */
-        .animated-bg { 
-            background: linear-gradient(-45deg, #1E1E2C, #333333, #1E1E2C, #333333);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .glowing-text {
-            font-size: 24px;
-            color: #fff;
-            text-align: center;
-            text-shadow: 0 0 5px #18BC9C, 0 0 10px #18BC9C, 0 0 20px #18BC9C, 0 0 40px #18BC9C, 0 0 80px #18BC9C;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #18BC9C, 0 0 10px #18BC9C, 0 0 20px #18BC9C, 0 0 40px #18BC9C, 0 0 80px #18BC9C;
-            }
-            to {
-                text-shadow: 0 0 10px #18BC9C, 0 0 20px #18BC9C, 0 0 40px #18BC9C, 0 0 80px #18BC9C, 0 0 160px #18BC9C;
-            }
-        }
-        .neon-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: #fff;
-            text-decoration: none;
-            text-align: center;
-            background-color: #18BC9C;
-            border-radius: 5px;
-            box-shadow: 0 0 10px #18BC9C, 0 0 20px #18BC9C, 0 0 40px #18BC9C, 0 0 80px #18BC9C;
-            transition: box-shadow 0.3s ease-in-out;
-        }
-        .neon-button:hover {
-            box-shadow: 0 0 20px #18BC9C, 0 0 40px #18BC9C, 0 0 80px #18BC9C, 0 0 160px #18BC9C;
-        }
     </style>
 </head>
-<body class="animated-bg">
+<body>
     <header>
         <div class="logo">
             <img src="tounnax.webp" alt="Tounnax Logo">
@@ -134,12 +93,12 @@
     </div>
 
     <section id="home" class="hero">
-        <a class="neon-button" href="https://ga-fs.primexop.com/2213/androidBuilds/tounnaxV1.apk">Download App</a>
+        <a href="https://ga-fs.primexop.com/2213/androidBuilds/tounnaxV1.apk">Download App</a>
     </section>
 
     <section id="about" class="about section">
         <h2>About Tounnax</h2>
-        <p class="glowing-text">Tounnax is your one-stop platform for Free Fire tournaments. Join the battle, showcase your skills, and win amazing cash prizes. Our app is designed to provide a seamless and exciting gaming experience for all players.</p>
+        <p>Tounnax is your one-stop platform for Free Fire tournaments. Join the battle, showcase your skills, and win amazing cash prizes. Our app is designed to provide a seamless and exciting gaming experience for all players.</p>
     </section>
 
     <section id="features" class="features section">
@@ -147,32 +106,32 @@
         <div class="feature">
             <img src="rupees.png" alt="Free Contests">
             <h3>Free Contests</h3>
-            <p class="glowing-text">You can join any contest of your liking and of your desired time for free as a launch offer.</p>
+            <p>You can join any contest of your liking and of your desired time for free as a launch offer.</p>
         </div>
         <div class="feature">
             <img src="chart.png" alt="Leader Boards">
             <h3>Leader Boards</h3>
-            <p class="glowing-text">There will be leader boards of all the pro players to see who got the guts and skills at the same time.</p>
+            <p>There will be leader boards of all the pro players to see who got the guts and skills at the same time.</p>
         </div>
         <div class="feature">
             <img src="giftbox.png" alt="Cash Prizes">
             <h3>Cash Prizes</h3>
-            <p class="glowing-text">As a true core gamer you will be competing some of the best players of India and also can win exciting cash prizes.</p>
+            <p>As a true core gamer you will be competing some of the best players of India and also can win exciting cash prizes.</p>
         </div>
         <div class="feature">
             <img src="play.png" alt="Fair Play">
             <h3>Fair Play</h3>
-            <p class="glowing-text">With the respect of gaming community, we have made some rules for the players. No Emulators, No Hackers.</p>
+            <p>With the respect of gaming community, we have made some rules for the players. No Emulators, No Hackers.</p>
         </div>
         <div class="feature">
             <img src="mans.png" alt="Share & Earn">
             <h3>Share & Earn</h3>
-            <p class="glowing-text">You can refer other gamers to play on the platform. You will get a refer bonus for it.</p>
+            <p>You can refer other gamers to play on the platform. You will get a refer bonus for it.</p>
         </div>
         <div class="feature">
             <img src="share.png" alt="More Features">
             <h3>More Features</h3>
-            <p class="glowing-text">Introducing more exciting features to enhance your gaming experience. Stay tuned!</p>
+            <p>Introducing more exciting features to enhance your gaming experience. Stay tuned!</p>
         </div>
     </section>
 
@@ -198,7 +157,7 @@
 
     <section id="download" class="download section">
         <h2>Download Tounnax</h2>
-        <a class="neon-button" href="https://ga-fs.primexop.com/2213/androidBuilds/tounnaxV1.apk">
+        <a href="https://ga-fs.primexop.com/2213/androidBuilds/tounnaxV1.apk">
             <i class="fa-brands fa-android"></i>
             <div>
                 <span>Available App</span>
@@ -213,7 +172,7 @@
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="neon-button">Send Message</button>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
@@ -229,4 +188,88 @@
         </div>
         <div class="stat">
             <h3>Total Wins Today</h3>
-            <p id="winsToday">100
+            <p id="winsToday">10000</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tounnax. All rights reserved.</p>
+    </footer>
+
+    <div id="backToTop" class="back-to-top">
+        ↑
+    </div>
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+
+        function toggleMenu() {
+            const menuPage = document.getElementById('menuPage');
+            menuPage.classList.toggle('active');
+        }
+
+        function changeColors() {
+            const colors = [
+                { background: '#1E1E2C', color: '#FFFFFF' },
+                { background: '#333333', color: '#FF6B6B' },
+                { background: '#FF6B6B', color: '#FFFFFF' },
+                { background: '#18BC9C', color: '#333333' },
+            ];
+            const body = document.body;
+            const currentColor = colors.shift();
+            body.style.backgroundColor = currentColor.background;
+            body.style.color = currentColor.color;
+            colors.push(currentColor);
+        }
+
+        setInterval(changeColors, 30000);
+
+        // Fake statistics increment
+        function incrementStatistics() {
+            const downloadsElement = document.getElementById('downloads');
+            const liveUsersElement = document.getElementById('liveUsers');
+            const winsTodayElement = document.getElementById('winsToday');
+
+            let downloads = parseInt(downloadsElement.textContent);
+            let liveUsers = parseInt(liveUsersElement.textContent);
+            let winsToday = parseInt(winsTodayElement.textContent);
+
+            // Increment downloads by 100 every second
+            downloads += 100;
+
+            // Increment live users from 800 to 2000 within 20 seconds
+            if (liveUsers < 2000) {
+                liveUsers += Math.floor((2000 - 800) / 20);
+            }
+
+            // Increment total wins today from 10000 to 15000 within 10 seconds
+            if (winsToday < 15000) {
+                winsToday += Math.floor((15000 - 10000) / 10);
+            }
+
+            downloadsElement.textContent = downloads;
+            liveUsersElement.textContent = liveUsers;
+            winsTodayElement.textContent = winsToday;
+        }
+
+        setInterval(incrementStatistics, 1000);
+
+        function navigateToSection(sectionId) {
+            document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+            toggleMenu();
+        }
+    </script>
+</body>
+</html>
