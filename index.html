@@ -8,40 +8,50 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         * { padding: 0; margin: 0; overflow-x: hidden; }
-        body { font-family: "Poppins", serif; background-color: #ECF0F1; color: #2C3E50; }
+        body { font-family: "Poppins", serif; background-color: #000000; color: #FFFFFF; animation: fadeIn 1s ease-in-out; }
         header, .section { padding: 20px; }
-        header { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(90deg, #2C3E50, #18BC9C); color: #FFFFFF; height: 12vh; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; }
+        header { display: flex; align-items: center; justify-content: space-between; background: #000000; color: #FFFFFF; height: 12vh; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; }
         header .logo { display: flex; align-items: center; }
         header .logo img { width: 50px; border-radius: 50%; }
+        header nav { display: none; }
+        header .menu-icon { display: block; cursor: pointer; }
         header nav ul { display: flex; list-style: none; }
         header nav ul li { margin: 0 15px; }
         header nav ul li a { color: #FFFFFF; text-decoration: none; font-size: 16px; }
-        .hero { text-align: center; background: url('banner.jpg') no-repeat center center/cover; color: #FFFFFF; height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .hero { text-align: center; background: url('banner.jpg') no-repeat center center/cover; color: #FFFFFF; height: 50vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .hero h1 { font-size: 40px; font-weight: bold; }
         .hero p { font-size: 20px; margin: 20px 0; }
-        .hero a { margin: 10px; padding: 10px 20px; text-decoration: none; font-size: 18px; color: #fff; border: 1px solid; border-radius: 20px; background-color: #E74C3C; }
+        .hero a { margin: 10px; padding: 10px 20px; text-decoration: none; font-size: 18px; color: #fff; border: 1px solid; border-radius: 20px; background-color: #E74C3C; box-shadow: 0 0 10px red; }
         .about, .features, .screenshots, .testimonials, .download, .contact { margin: 20px 0; }
-        .about h2, .features h2, .screenshots h2, .testimonials h2, .download h2, .contact h2 { text-align: center; font-size: 30px; font-weight: bold; margin-bottom: 20px; }
-        .about p, .features p, .screenshots p, .testimonials p, .download p, .contact p { text-align: center; font-size: 16px; margin: 10px 0; }
-        .features .feature { display: flex; align-items: center; margin: 20px 0; }
-        .features .feature img { width: 40px; margin-right: 20px; animation: fadeIn 1s ease-in-out; filter: drop-shadow(0 0 8px white); }
+        .about h2, .features h2, .screenshots h2, .testimonials h2, .download h2, .contact h2 { text-align: center; font-size: 30px; font-weight: bold; margin-bottom: 20px; animation: fadeIn 1s ease-in-out; }
+        .about p, .features p, .screenshots p, .testimonials p, .download p, .contact p { text-align: center; font-size: 16px; margin: 10px 0; animation: fadeIn 1s ease-in-out; }
+        .features .feature { display: flex; align-items: center; margin: 20px 0; animation: fadeIn 1s ease-in-out; }
+        .features .feature img { width: 80px; margin-right: 20px; filter: drop-shadow(0 0 20px white); }
         .features .feature h3 { font-size: 24px; font-weight: bold; }
         .features .feature p { font-size: 16px; }
-        .screenshots img { width: 100%; max-width: 300px; border-radius: 15px; margin: 0 auto; display: block; }
-        .testimonials .testimonial { display: flex; align-items: center; margin: 20px 0; }
-        .testimonials .testimonial img { width: 50px; border-radius: 50%; margin-right: 20px; }
+        .screenshots img { width: 100%; max-width: 300px; border-radius: 15px; margin: 0 auto; display: block; filter: drop-shadow(0 0 20px white); }
+        .testimonials .testimonial { display: flex; align-items: center; margin: 20px 0; animation: fadeIn 1s ease-in-out; }
+        .testimonials .testimonial img { width: 70px; border-radius: 50%; margin-right: 20px; filter: drop-shadow(0 0 20px white); }
         .testimonials .testimonial p { font-size: 16px; }
-        .download a { color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; flex-direction: row; border: 1px solid; padding: 10px; border-radius: 25px; background-color: #E74C3C; width: 80%; margin: 10px auto; }
+        .download a { color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; flex-direction: row; border: 1px solid; padding: 10px; border-radius: 25px; background-color: #E74C3C; width: 80%; margin: 10px auto; box-shadow: 0 0 10px red; }
         .contact form { display: flex; flex-direction: column; align-items: center; }
         .contact form input, .contact form textarea { width: 80%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        .contact form button { padding: 10px 20px; border: none; border-radius: 5px; background-color: #18BC9C; color: #fff; font-size: 16px; cursor: pointer; }
-        footer { text-align: center; padding: 20px; background-color: #2C3E50; color: #fff; }
+        .contact form button { padding: 10px 20px; border: none; border-radius: 5px; background-color: #18BC9C; color: #fff; font-size: 16px; cursor: pointer; box-shadow: 0 0 10px green; }
+        footer { text-align: center; padding: 20px; background-color: #000000; color: #fff; }
         .back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: #007BFF; color: white; text-align: center; line-height: 50px; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: opacity 0.3s ease, transform 0.3s ease; opacity: 0; visibility: hidden; z-index: 1000; }
         .back-to-top.show { opacity: 1; visibility: visible; }
         .back-to-top:hover { background-color: #0056b3; transform: scale(1.1); }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            header nav { display: none; }
+            header .menu-icon { display: block; cursor: pointer; }
+            header .menu-icon .bar { display: block; width: 25px; height: 3px; background-color: #fff; margin: 5px 0; }
+            header nav.active { display: block; position: absolute; top: 12vh; left: 0; width: 100%; background-color: #000; }
+            header nav ul { flex-direction: column; }
+            header nav ul li { margin: 10px 0; }
         }
     </style>
 </head>
@@ -50,6 +60,11 @@
         <div class="logo">
             <img src="tounnax.webp" alt="Tounnax Logo">
             <span>Tounnax</span>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
         <nav>
             <ul>
@@ -183,6 +198,11 @@
                 behavior: "smooth",
             });
         });
+
+        function toggleMenu() {
+            const nav = document.querySelector('header nav');
+            nav.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
