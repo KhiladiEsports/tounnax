@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tounnax - Free Fire Tournament App</title>
+    <script src="https://kit.fontawesome.com/8aa17a250d.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        * { padding: 0; margin: 0; overflow-x: hidden; }
+        body { font-family: "Poppins", serif; background-color: #ECF0F1; color: #2C3E50; }
+        header, .section { padding: 20px; }
+        header { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(90deg, #2C3E50, #18BC9C); color: #FFFFFF; height: 12vh; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; }
+        header .logo { display: flex; align-items: center; }
+        header .logo img { width: 50px; border-radius: 50%; }
+        header nav ul { display: flex; list-style: none; }
+        header nav ul li { margin: 0 15px; }
+        header nav ul li a { color: #FFFFFF; text-decoration: none; font-size: 16px; }
+        .hero { text-align: center; background: url('banner.jpg') no-repeat center center/cover; color: #FFFFFF; height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .hero h1 { font-size: 40px; font-weight: bold; }
+        .hero p { font-size: 20px; margin: 20px 0; }
+        .hero a { margin: 10px; padding: 10px 20px; text-decoration: none; font-size: 18px; color: #fff; border: 1px solid; border-radius: 20px; background-color: #E74C3C; }
+        .about, .features, .screenshots, .testimonials, .download, .contact { margin: 20px 0; }
+        .about h2, .features h2, .screenshots h2, .testimonials h2, .download h2, .contact h2 { text-align: center; font-size: 30px; font-weight: bold; margin-bottom: 20px; }
+        .about p, .features p, .screenshots p, .testimonials p, .download p, .contact p { text-align: center; font-size: 16px; margin: 10px 0; }
+        .features .feature { display: flex; align-items: center; margin: 20px 0; }
+        .features .feature img { width: 40px; margin-right: 20px; animation: fadeIn 1s ease-in-out; filter: drop-shadow(0 0 8px white); }
+        .features .feature h3 { font-size: 24px; font-weight: bold; }
+        .features .feature p { font-size: 16px; }
+        .screenshots img { width: 100%; max-width: 300px; border-radius: 15px; margin: 0 auto; display: block; }
+        .testimonials .testimonial { display: flex; align-items: center; margin: 20px 0; }
+        .testimonials .testimonial img { width: 50px; border-radius: 50%; margin-right: 20px; }
+        .testimonials .testimonial p { font-size: 16px; }
+        .download a { color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; flex-direction: row; border: 1px solid; padding: 10px; border-radius: 25px; background-color: #E74C3C; width: 80%; margin: 10px auto; }
+        .contact form { display: flex; flex-direction: column; align-items: center; }
+        .contact form input, .contact form textarea { width: 80%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        .contact form button { padding: 10px 20px; border: none; border-radius: 5px; background-color: #18BC9C; color: #fff; font-size: 16px; cursor: pointer; }
+        footer { text-align: center; padding: 20px; background-color: #2C3E50; color: #fff; }
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: #007BFF; color: white; text-align: center; line-height: 50px; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: opacity 0.3s ease, transform 0.3s ease; opacity: 0; visibility: hidden; z-index: 1000; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background-color: #0056b3; transform: scale(1.1); }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="tounnax.webp" alt="Tounnax Logo">
+            <span>Tounnax</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-media-icons">
+            <a href="https://youtube.com/@snipervishalgaming?si=hm6ujGW9fD2JUsmc"><img src="yt.webp" alt="YouTube Logo" style="width: 30px;"></a>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Tounnax</h1>
+        <p>The ultimate Free Fire tournament app. Compete, connect, and conquer!</p>
+        <a href="https://ga-fs.primexop.com/2213/androidBuilds/tounnaxV1.apk">Download App</a>
+    </section>
+
+    <section id="about" class="about section">
+        <h2>About Tounnax</h2>
+        <p>Tounnax is your one-stop platform for Free Fire tournaments. Join the battle, showcase your skills, and win amazing cash prizes. Our app is designed to provide a seamless and exciting gaming experience for all players.</p>
+    </section>
+
+    <section id="features" class="features section">
+        <h2>Key Features</h2>
+        <div class="feature">
+            <img src="rupees.png" alt="Free Contests">
+            <div>
+                <h3>Free Contests</h3>
+                <p>You can join any contest of your liking and of your desired time for free as a launch offer.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="chart.png" alt="Leader Boards">
+            <div>
+                <h3>Leader Boards</h3>
+                <p>There will be leader boards of all the pro players to see who got the guts and skills at the same time.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="giftbox.png" alt="Cash Prizes">
+            <div>
+                <h3>Cash Prizes</h3>
+                <p>As a true core gamer you will be competing some of the best players of India and also can win exciting cash prizes.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="play.png" alt="Fair Play">
+            <div>
+                <h3>Fair Play</h3>
+                <p>With the respect of gaming community, we have made some rules for the players. No Emulators, No Hackers.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="mans.png" alt="Share & Earn">
+            <div>
+                <h3>Share & Earn</h3>
+                <p>You can refer other gamers to play on the platform. You will get a refer bonus for it.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="share.png" alt="More Features">
+            <div>
+                <h3>More Features</h3>
+                <p>Introducing more exciting features to enhance your gaming experience. Stay tuned!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots" class="screenshots section">
+        <h2>App Screenshots</h2>
+        <img src="interface.jpg" alt="App Interface">
+        <p>Experience the sleek and user-friendly interface of Tounnax. Join tournaments, check leaderboards, and manage your profile with ease.</p>
+    </section>
+
+    <section id="testimonials" class="testimonials section">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <img src="pic.png" alt="User 1">
+            <p>"Tounnax is the best tournament app I've ever used! The competitions are fierce and the prizes are amazing."</p>
+        </div>
+        <div class="testimonial">
+            <img src="pic.png" alt="User 2">
+            <p>"I love how easy it is to join contests and track my progress on the leaderboards. Highly recommend Tounnax to all Free Fire players!"</p>
+        </div>
+    </section>
+
+    <section id="download" class="download section">
+        <h2>Download Tounnax</h2>
+        <a href="https://ga-fs.primexop.com/2213/androidBuilds/tounnaxV1.apk">
+            <i class="fa-brands fa-android"></i>
+            <div>
+                <span>Available App</span>
+                <p>Download Here</p>
+            </div>
+        </a>
+    </section>
+
+    <section id="contact" class="contact section">
+        <h2>Contact Us</h2>
+        <form action="https://api.whatsapp.com/send?phone=8814923390&text=i%20want%20to%20know%20about%20your%20app" method="get">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tounnax. All rights reserved.</p>
+    </footer>
+
+    <div id="backToTop" class="back-to-top">
+        ↑
+    </div>
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+    </script>
+</body>
+</html>
