@@ -6,32 +6,33 @@
     <title>Tounnax - Free Fire Tournament App</title>
     <script src="https://kit.fontawesome.com/8aa17a250d.js" crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
         * { padding: 0; margin: 0; overflow-x: hidden; }
-        body { font-family: "Poppins", serif; background-color: #1E1E2C; color: #FFFFFF; animation: fadeIn 1s ease-in-out; }
+        body { font-family: "Poppins", serif; background-color: #1E1E2C; color: #FFFFFF; transition: background-color 0.5s, color 0.5s; animation: fadeIn 1s ease-in-out; }
         header, .section { padding: 10px; }
         header { display: flex; align-items: center; justify-content: space-between; background: #333333; color: #FFFFFF; height: 10vh; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; }
         header .logo { display: flex; align-items: center; }
         header .logo img { width: 40px; border-radius: 50%; }
         header nav { display: none; }
         header .menu-icon { display: block; cursor: pointer; }
-        header nav ul { display: flex; list-style: none; }
-        header nav ul li { margin: 0 15px; }
-        header nav ul li a { color: #FFFFFF; text-decoration: none; font-size: 14px; }
-        .hero { text-align: center; background: url('banner.jpg') no-repeat center center/cover; color: #FFFFFF; height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-size: contain; }
-        .hero h1 { font-size: 36px; font-weight: bold; }
-        .hero p { font-size: 18px; margin: 20px 0; }
+        header .menu-icon .bar { display: block; width: 25px; height: 3px; background-color: #fff; margin: 5px 0; }
+        .menu-page { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 1001; flex-direction: column; align-items: center; justify-content: center; }
+        .menu-page.active { display: flex; }
+        .menu-page ul { list-style: none; padding: 0; }
+        .menu-page ul li { margin: 20px 0; }
+        .menu-page ul li a { color: #FFFFFF; text-decoration: none; font-size: 24px; padding: 10px 20px; border-radius: 5px; background-color: #333333; box-shadow: 0 0 10px white; }
+        .hero { text-align: center; background: url('banner.jpg') no-repeat center center/contain; color: #FFFFFF; height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 20px; }
         .hero a { margin: 10px; padding: 10px 20px; text-decoration: none; font-size: 18px; color: #fff; border: 1px solid; border-radius: 20px; background-color: #18BC9C; box-shadow: 0 0 10px #18BC9C; }
         .about, .features, .screenshots, .testimonials, .download, .contact { margin: 20px 0; }
         .about h2, .features h2, .screenshots h2, .testimonials h2, .download h2, .contact h2 { text-align: center; font-size: 30px; font-weight: bold; margin-bottom: 20px; animation: fadeIn 1s ease-in-out; }
         .about p, .features p, .screenshots p, .testimonials p, .download p, .contact p { text-align: center; font-size: 16px; margin: 10px 0; animation: fadeIn 1s ease-in-out; }
         .features .feature { display: flex; align-items: center; margin: 20px 0; animation: fadeIn 1s ease-in-out; }
-        .features .feature img { width: 80px; height: 80px; margin-right: 20px; border-radius: 50%; filter: drop-shadow(0 0 20px #18BC9C); }
+        .features .feature img { width: 100px; height: 100px; margin-right: 20px; filter: drop-shadow(0 0 20px #18BC9C); }
         .features .feature h3 { font-size: 24px; font-weight: bold; }
         .features .feature p { font-size: 16px; }
         .screenshots img { width: 100%; max-width: 300px; border-radius: 15px; margin: 0 auto; display: block; filter: drop-shadow(0 0 20px #18BC9C); }
         .testimonials .testimonial { display: flex; align-items: center; margin: 20px 0; animation: fadeIn 1s ease-in-out; }
-        .testimonials .testimonial img { width: 80px; height: 80px; border-radius: 50%; margin-right: 20px; filter: drop-shadow(0 0 20px #18BC9C); }
+        .testimonials .testimonial img { width: 100px; height: 100px; margin-right: 20px; filter: drop-shadow(0 0 20px #18BC9C); }
         .testimonials .testimonial p { font-size: 16px; }
         .download a { color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; flex-direction: row; border: 1px solid; padding: 10px; border-radius: 25px; background-color: #18BC9C; width: 80%; margin: 10px auto; box-shadow: 0 0 10px #18BC9C; }
         .contact form { display: flex; flex-direction: column; align-items: center; }
@@ -69,20 +70,19 @@
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
+    <div class="menu-page" id="menuPage">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
     <section id="home" class="hero">
-        <h1>Welcome to Tounnax</h1>
-        <p>The ultimate Free Fire tournament app. Compete, connect, and conquer!</p>
         <a href="https://ga-fs.primexop.com/2213/androidBuilds/tounnaxV1.apk">Download App</a>
     </section>
 
@@ -200,9 +200,25 @@
         });
 
         function toggleMenu() {
-            const nav = document.querySelector('header nav');
-            nav.classList.toggle('active');
+            const menuPage = document.getElementById('menuPage');
+            menuPage.classList.toggle('active');
         }
+
+        function changeColors() {
+            const colors = [
+                { background: '#1E1E2C', color: '#FFFFFF' },
+                { background: '#333333', color: '#FF6B6B' },
+                { background: '#FF6B6B', color: '#FFFFFF' },
+                { background: '#18BC9C', color: '#333333' },
+            ];
+            const body = document.body;
+            const currentColor = colors.shift();
+            body.style.backgroundColor = currentColor.background;
+            body.style.color = currentColor.color;
+            colors.push(currentColor);
+        }
+
+        setInterval(changeColors, 30000);
     </script>
 </body>
 </html>
